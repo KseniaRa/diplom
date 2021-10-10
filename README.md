@@ -1,7 +1,7 @@
 # Final project for QA.Guru with examples of UI, API and Mobile tests 
 
 
- Used technologies:
+### Used technologies:
 
 ![Java](https://user-images.githubusercontent.com/52957959/136703369-49c177b4-4d36-4fef-9b37-e14684928b97.png)
 ![Gradle](https://user-images.githubusercontent.com/52957959/136703385-c49eb8a2-e280-45cd-adfa-3578de827ee0.png)
@@ -14,20 +14,39 @@
 ![Telegram](https://user-images.githubusercontent.com/52957959/136703423-3c828863-bbb1-4346-a7e8-fd5400822de8.png)
 
 
-Видео о прохождении тестов
+
+Run tests with filled remote.properties:
+```bash
+gradle clean test
+```
+
+Run tests with not filled remote.properties:
+```bash
+gradle clean -DremoteDriverUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ -DvideoStorage=https://selenoid.autotests.cloud/video/ -Dthreads=1 test
+```
+
+Serve report:
+```bash
+allure serve build/allure-results
+```
 
 
 
-Jenkins
+## Видео о прохождении тестов
+
+![news_(online-video-cutter com)](https://user-images.githubusercontent.com/52957959/136703815-122ea0e9-cfd1-4c80-88a3-ca65b96686ac.gif)
+
+
+## Jenkins
 
 Указание параметров для запуска
 
 
 
-Отчёт в Allure Report
+## Отчёт в Allure Report
 
 
-Хранение тест-кейсов в Allure TestOps
+## Хранение тест-кейсов в Allure TestOps
 
 Результат запуска тестов
 
