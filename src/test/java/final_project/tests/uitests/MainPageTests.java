@@ -8,16 +8,16 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.attribute;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@Owner("mhilimovich")
+
 @Feature("Main page")
 public class MainPageTests extends TestBase {
-    String mainPageURL = "https://www.profitero.com/";
+    String mainPageURL = "https://www.vprok.ru/";
 
     @Test
     @Story("Verification of the main page")
@@ -29,87 +29,107 @@ public class MainPageTests extends TestBase {
         });
 
         step("Check product title", () -> {
-            $("title").shouldHave(attribute("text",
-                    "Profitero | Accelerate your eCommerce sales"));
+            String expectedTitle = "Vprok.ru Перекрёсток – доставка продуктов на дом и на дачу Впрок";
+            String actualTitle = title();
+            assertThat(actualTitle).isEqualTo(expectedTitle);
         });
     }
-
 
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
-    @DisplayName("Checking menu items on the main page")
-    public void checkMenuItemsTest() {
+    @DisplayName("Registration popup is available")
+    public void loginPopupAvailabilityTest() {
         step("Open the main page", () -> {
             open(mainPageURL);
         });
 
-        step("Check names of all menu items", () -> {
-            $("#megamenu__platform-tab").shouldHave(text("Platform"));
-            $("#megamenu__who-we-help-tab").shouldHave(text("Who we help"));
-            $("#megamenu__in-the-news-tab").shouldHave(text("In the news"));
-            $("#megamenu__resources-tab").shouldHave(text("Resources"));
-            $("#megamenu__about-us-tab").shouldHave(text("About us"));
+        step("OPen popup", () -> {
+            $(".xfnew-header__user-nav:nth-child(5)").click();
+        });
+
+        step("Check that Login popup is open", () -> {
+            $(".xf-auth-title__text")
+                    .shouldHave(text("Вход или регистрация"));
         });
     }
 
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
-    @DisplayName("Checking Login page is available")
-    public void loginPageAvailabilityTest() {
+    @DisplayName("Checking region popup on the main page")
+    public void regionTest() {
         step("Open the main page", () -> {
             open(mainPageURL);
         });
 
-        step("Go to Login page", () -> {
-            $(byText("Login")).click();
-        });
-
-        step("Check that Login page is open", () -> {
-            $("h1").shouldHave(text("Login"));
+        step("Check popup", () -> {
+            $(".xfnew-header__change-region").click();
+            $(".xf-popup-polygons__block-check-region")
+                    .shouldHave(text("Выберите ваш регион"));
         });
     }
+
+
 
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
-    @DisplayName("Verify that Forgot Password page is available")
-    public void loginWithEmptyFieldTest() {
+    @DisplayName("Promo page")
+    public void promoTest() {
         step("Open the main page", () -> {
             open(mainPageURL);
         });
 
-        step("Go to Login page", () -> {
-            $(byText("Login")).click();
-            $("h1").shouldHave(text("Login"));
+        step("Go to Promo page", () -> {
+            $(byText("Акции")).click();
         });
 
-        step("Go to Forgot Password page", () -> {
-            $(".forgot-password-link.link").click();
-        });
-
-        step("Check that the Forgot Password page is open", () -> {
-            $("h1").shouldHave(text("Request to reset password"));
+        step("Check page", () -> {
+            $(".xf-caption__title")
+                    .shouldHave(text("Акции"));
         });
     }
 
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
-    @DisplayName("Successful opening Request Demo page")
-    public void requestDemoPageTest() {
+    @DisplayName("Successful opening Catalog page")
+    public void catalogPageTest() {
         step("Open the main page", () -> {
             open(mainPageURL);
         });
 
         step("Go to Request Demo page", () -> {
-            $(byText("Request a demo")).click();
+            $(".xfnew-header__catalog-button").click();
+            $$(".fo-catalog-menu__nav a").
+                    findBy(text("Молоко, сыр, яйца")).click();
         });
 
-        step("Check that Request Demo page is open", () -> {
-            $x("//h2/span").shouldHave(text("Accelerate your eCommerce sales"));
-            $("#hs_cos_wrapper_widget_1612362065267_ p").shouldHave(text("Book your demo to see how these brands"));
+        step("Check that  page is open", () -> {
+            $(".fo-breadcrumbs__current").
+                    shouldHave(text("Молоко, сыр, яйца"));
         });
     }
+
+    @Test
+    @Story("Verification of the main page")
+    @Tags({@Tag("web"), @Tag("ui")})
+    @DisplayName("Successful opening news page")
+    public void newsPageTest() {
+        step("Open the main page", () -> {
+            open(mainPageURL);
+        });
+
+        step("Go to news page", () -> {
+            $(".xf-mp-recipe-news__list").scrollIntoView(true).click();
+            $(".xf-mp-recipe-news__img-block").click();
+        });
+
+        step("Check that  page is open", () -> {
+            $(".xf-caption__title").shouldBe(visible);
+        });
+    }
+
+
 }
