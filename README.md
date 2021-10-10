@@ -32,12 +32,12 @@ allure serve build/allure-results
 
 
 
-## Видео о прохождении тестов
+### Видео о прохождении тестов
 
 ![news_(online-video-cutter com)](https://user-images.githubusercontent.com/52957959/136703815-122ea0e9-cfd1-4c80-88a3-ca65b96686ac.gif)
 
 
-## Jenkins
+## [Jenkins](https://jenkins.autotests.cloud/job/rassadina_diplom/)
 
 Указание параметров для запуска
 
@@ -51,7 +51,7 @@ allure serve build/allure-results
 Результат запуска тестов
 
 
-Интерграция с Jira
+## Интерграция с Jira
 
 
-Уведомление в телеграмм
+## Уведомление в телеграмм
