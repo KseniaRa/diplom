@@ -40,6 +40,7 @@ allure serve build/allure-results
 ## [Jenkins](https://jenkins.autotests.cloud/job/rassadina_diplom/)
 
 Указание параметров для запуска
+![Jenkins - Google Chrome 2021-10-10 19 10 02](https://user-images.githubusercontent.com/52957959/136704127-7219a7fe-6568-4dcf-8056-2106f46b081e.png)
 
 
 
