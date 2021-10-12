@@ -13,12 +13,14 @@ def allureVersion = "2.13.9",
     junitVersion = "5.7.1"
 
 allure {
-    version = allureVersion
-    autoconfigure = true
+    version = '2.14.0'
+    aspectjVersion = '1.9.4' // добавить при Error: unable to add stackmap attributes. null
     aspectjweaver = true
-    configuration = "testImplementation"
+    configuration = "testImplementation" // если при запуске тестов через терминал,
+    // ошибка Configuration with name 'testCompile' not found
+    autoconfigure = true
     useJUnit5 {
-        version = allureVersion
+        version = '2.14.0'
     }
 }
 
