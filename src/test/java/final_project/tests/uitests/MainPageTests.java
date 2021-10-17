@@ -1,7 +1,8 @@
 package final_project.tests.uitests;
 
+import final_project.allure.JiraIssue;
+import final_project.allure.JiraIssues;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -22,6 +23,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
     @DisplayName("Opening the main page")
     public void checkMainPageTitleTest() {
         step("Open the main page", () -> {
@@ -38,6 +40,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
     @DisplayName("Registration popup is available")
     public void loginPopupAvailabilityTest() {
         step("Open the main page", () -> {
@@ -57,6 +60,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
     @DisplayName("Checking region popup on the main page")
     public void regionTest() {
         step("Open the main page", () -> {
@@ -75,6 +79,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
     @DisplayName("Promo page")
     public void promoTest() {
         step("Open the main page", () -> {
@@ -94,6 +99,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
     @DisplayName("Successful opening Catalog page")
     public void catalogPageTest() {
         step("Open the main page", () -> {
@@ -115,6 +121,7 @@ public class MainPageTests extends TestBase {
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
     @DisplayName("Successful opening news page")
     public void newsPageTest() {
         step("Open the main page", () -> {
