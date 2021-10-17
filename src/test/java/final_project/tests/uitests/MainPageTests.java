@@ -2,6 +2,7 @@ package final_project.tests.uitests;
 
 import final_project.allure.JiraIssue;
 import final_project.allure.JiraIssues;
+import final_project.helpers.DriverHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -138,5 +139,21 @@ public class MainPageTests extends TestBase {
         });
     }
 
+    @Test
+    @Story("Verification of the main page")
+    @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
+    @DisplayName("Page console log should not have errors")
+    void consoleShouldNotHaveErrorsTest() {
+        step("Open url 'https://www.vprok.ru/'", () ->
+                open("https://www.vprok.ru/"));
+
+        step("Console logs should not contain text 'SEVERE'", () -> {
+            String consoleLogs = DriverHelper.getConsoleLogs();
+            String errorText = "SEVERE";
+
+            assertThat(consoleLogs).doesNotContain(errorText);
+        });
+    }
 
 }
