@@ -70,8 +70,7 @@ public class MainPageTests extends TestBase {
 
         step("Check popup", () -> {
             $(".xfnew-header__change-region").click();
-            $(".xf-popup-polygons__block-check-region")
-                    .shouldHave(text("Выберите ваш регион"));
+            $("#form_popup-polygons").should(exist); ;
         });
     }
 
@@ -130,7 +129,7 @@ public class MainPageTests extends TestBase {
         });
 
         step("Go to news page", () -> {
-            $(".xf-mp-recipe-news__list").scrollIntoView(true).click();
+            $(".xf-mp-recipe-news__list").scrollIntoView(true);
             $(".xf-mp-recipe-news__img-block").click();
         });
 
