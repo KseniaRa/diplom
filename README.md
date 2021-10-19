@@ -69,6 +69,8 @@ Mobile
 
 
 ## Интерграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-253)
+![image](https://user-images.githubusercontent.com/52957959/137966978-8c29bffb-8434-42ec-a78f-5ceafe3b0ffd.png)
+
 
 
 ## Уведомление в телеграмм
