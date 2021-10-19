@@ -10,36 +10,40 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.appium.java_client.MobileBy.AccessibilityId;
 import static io.qameta.allure.Allure.step;
 import static java.nio.channels.Selector.open;
 
 public class BrowserStackTests extends MobileTestBase {
-    @Tag("selenide_android")
+    @Tag("mobile")
     @Test
-    @DisplayName("Search on Wikipedia test")
-    void simpleWikiSearchTest() {
-        step("Open app", () -> {
-            open();
+    @DisplayName("Successful search in wikipedia android app")
+    void searchTest() {
+        step("Type search", () -> {
+            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
+            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).val("BrowserStack");
         });
-
-        step("If opened onboarding page - press back button", () -> {
-            if ($(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).isDisplayed()) {
-                $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
-            }
-        });
-
-        step("Click on 'Search Wikipedia'", () -> {
-            $(AccessibilityId("Search Wikipedia")).click();
-        });
-
-        step("Type 'MobileBrowserstack'", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("MobileBrowserstack");
-        });
-
-        step("Verify success search", () -> {
-            $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(sizeGreaterThan(0));
-        });
+        step("Verify content found", () ->
+                $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_container"))
+                        .shouldHave(sizeGreaterThan(0)));
     }
+
+    @Tag("mobile")
+    @Test
+    @DisplayName("Open article")
+    void openArticleTest(){
+        step("Type search", () -> {
+            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
+            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).val("Cleopatra");
+        });
+        step("Click an content", () ->
+                $$(MobileBy.className("android.widget.TextView")).
+                        findBy(text("Search Wikipedia")).click());
+        step("Check title 'Cleopatra' ", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).
+                        shouldHave(text("Cleopatra")));
+    }
+
 }

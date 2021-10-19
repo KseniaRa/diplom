@@ -24,6 +24,8 @@ public class BrowserStackMobileDriver implements WebDriverProvider {
         return capabilities;
     }
 
+
+
     public AndroidDriver getAndroidDriver() {
         DesiredCapabilities capabilities = commonCapabilities();
         capabilities.setCapability("device", MobileProjectConfig.MOBILE_ANDROID_CONFIG.device());
