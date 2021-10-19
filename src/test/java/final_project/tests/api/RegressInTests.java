@@ -20,18 +20,17 @@ public class RegressInTests {
 
     @Test
     @Story("Get requests")
-    @DisplayName("Get a single resource")
+    @DisplayName("Get a user")
     @Tags({@Tag("web"), @Tag("api")})
-    void singleResourceSuccessfulTest() {
-        given()
-                .when()
-                .get("/api/unknown/2")
+    void getSingleUserTest() {
+        given().
+                when()
+                .get("https://reqres.in/api/users/2")
                 .then()
                 .statusCode(200)
-                .body("data.id", is(2))
-                .body("data.name", is("fuchsia rose"));
-    }
+                .body("data.first_name", is("Janet"));
 
+    }
 
     @Test
     @Story("Get requests")
@@ -96,5 +95,17 @@ public class RegressInTests {
                 .statusCode(200)
                 .body("name", is("morpheus"))
                 .body("job", is("zion resident"));
+    }
+
+    @Test
+    @Story("Delete requests")
+    @DisplayName("Delete user")
+    @Tags({@Tag("web"), @Tag("api")})
+    void deleteUserTest (){
+        given().
+                when()
+                .delete("https://reqres.in/api/users/2")
+                .then()
+                .statusCode(204);
     }
 }
