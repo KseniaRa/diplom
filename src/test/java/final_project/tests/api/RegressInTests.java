@@ -1,5 +1,8 @@
 package final_project.tests.api;
 
+import final_project.allure.Layer;
+import final_project.allure.Lead;
+import final_project.allure.Microservice;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -10,8 +13,9 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
 
-@Owner("mhilimovich")
-@Feature("RegresIn site")
+@Layer("Api")
+@Lead("qa-lead")
+@Feature("User data")
 public class RegressInTests {
     @BeforeAll
     static void setup() {
@@ -21,6 +25,7 @@ public class RegressInTests {
     @Test
     @Story("Get requests")
     @DisplayName("Get a user")
+    @Microservice("user")
     @Tags({@Tag("web"), @Tag("api")})
     void getSingleUserTest() {
         given().
@@ -35,6 +40,7 @@ public class RegressInTests {
     @Test
     @Story("Get requests")
     @DisplayName("Get a single resource, negative test")
+    @Microservice("user")
     @Tags({@Tag("web"), @Tag("api")})
     void singleResourceFailedTest() {
         given()
@@ -48,6 +54,7 @@ public class RegressInTests {
     @Test
     @Story("Post requests")
     @DisplayName("Successful registration test")
+    @Microservice("user")
     @Tags({@Tag("web"), @Tag("api")})
     void registrationSuccessfulTest() {
         given()
@@ -66,6 +73,7 @@ public class RegressInTests {
     @Test
     @Story("Post requests")
     @DisplayName("Successful login test")
+    @Microservice("user")
     @Tags({@Tag("web"), @Tag("api")})
     void loginSuccessfulTest() {
         given()
@@ -83,6 +91,7 @@ public class RegressInTests {
     @Test
     @Story("Put requests")
     @DisplayName("Successful update of user data")
+    @Microservice("user")
     @Tags({@Tag("web"), @Tag("api")})
     void updateUserSuccessfulTest() {
         given()
@@ -100,6 +109,7 @@ public class RegressInTests {
     @Test
     @Story("Delete requests")
     @DisplayName("Delete user")
+    @Microservice("user")
     @Tags({@Tag("web"), @Tag("api")})
     void deleteUserTest (){
         given().

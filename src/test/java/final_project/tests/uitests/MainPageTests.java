@@ -1,7 +1,6 @@
 package final_project.tests.uitests;
 
-import final_project.allure.JiraIssue;
-import final_project.allure.JiraIssues;
+import final_project.allure.*;
 import final_project.helpers.DriverHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -16,7 +15,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-
+@Layer("web")
+@Lead("qa-lead")
 @Feature("Main page")
 public class MainPageTests extends TestBase {
     String mainPageURL = "https://www.vprok.ru/";
@@ -42,6 +42,7 @@ public class MainPageTests extends TestBase {
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
     @JiraIssues({@JiraIssue("HOMEWORK-253")})
+    @Microservice("Auth")
     @DisplayName("Registration popup is available")
     public void loginPopupAvailabilityTest() {
         step("Open the main page", () -> {
