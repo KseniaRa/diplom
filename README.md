@@ -33,8 +33,14 @@ allure serve build/allure-results
 
 
 ### Видео о прохождении тестов
+Web 
 
 ![news_(online-video-cutter com)](https://user-images.githubusercontent.com/52957959/136703815-122ea0e9-cfd1-4c80-88a3-ca65b96686ac.gif)
+
+
+Mobile
+![mobile__test_video](https://user-images.githubusercontent.com/52957959/137966105-e8161145-1969-44f1-913d-9314c02f0fdd.gif)
+
 
 
 ## [Jenkins](https://jenkins.autotests.cloud/job/rassadina_diplom/)
@@ -45,14 +51,26 @@ allure serve build/allure-results
 
 
 ## Отчёт в Allure Report
+![Allure Report - Google Chrome 2021-10-17 21 18 20](https://user-images.githubusercontent.com/52957959/137965154-42550771-428c-4d0a-8731-2e919d63d400.png)
 
 
-## Хранение тест-кейсов в Allure TestOps
+## Хранение тест-кейсов в [Allure TestOps](https://allure.autotests.cloud/project/540/test-cases?treeId=1072)
+![Allure TestOps - Google Chrome 2021-10-19 21 07 52](https://user-images.githubusercontent.com/52957959/137966633-eb128181-a12f-4363-878a-57dbacb700e6.png)
 
-Результат запуска тестов
+
+## Тест планы в Allure TestOps
+![image](https://user-images.githubusercontent.com/52957959/137966418-28b2221f-fbee-482a-9f05-2c65dbd2bc18.png)
 
 
-## Интерграция с Jira
+
+## Результат запуска тестов
+![image](https://user-images.githubusercontent.com/52957959/137965478-c2e333a7-4093-44c9-a453-ed09567e88aa.png)
+
+
+
+## Интерграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-253)
+![image](https://user-images.githubusercontent.com/52957959/137966978-8c29bffb-8434-42ec-a78f-5ceafe3b0ffd.png)
+
 
 
 ## Уведомление в телеграмм
