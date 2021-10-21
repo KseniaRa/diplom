@@ -3,8 +3,11 @@ package final_project.tests.mobile;
 import com.codeborne.selenide.ClickMethod;
 import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Condition;
+import final_project.allure.Layer;
+import final_project.allure.Lead;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,6 +19,9 @@ import static io.appium.java_client.MobileBy.AccessibilityId;
 import static io.qameta.allure.Allure.step;
 import static java.nio.channels.Selector.open;
 
+@Layer("Mobile")
+@Lead("qa-lead")
+@Feature("App tests")
 public class BrowserStackTests extends MobileTestBase {
     @Tag("mobile")
     @Test
