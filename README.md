@@ -75,4 +75,4 @@ Mobile
 
 
 ## Уведомление в телеграмм
-![image](https://user-images.githubusercontent.com/52957959/138335627-ff4617e9-d3d9-4de6-af74-cbe5229f0e03.png)
+![image](https://user-images.githubusercontent.com/52957959/138336012-8871c117-d6cb-4a1b-818f-2276d01b8819.png)
