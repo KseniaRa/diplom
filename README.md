@@ -63,8 +63,9 @@ Mobile
 
 
 
-## Результат запуска тестов
-![image](https://user-images.githubusercontent.com/52957959/137965478-c2e333a7-4093-44c9-a453-ed09567e88aa.png)
+## Дашборд с тестами и историей запусков
+![image](https://user-images.githubusercontent.com/52957959/138329828-9a5db2e5-1fe1-44e1-acf4-286ce9ceb393.png)
+
 
 
 
