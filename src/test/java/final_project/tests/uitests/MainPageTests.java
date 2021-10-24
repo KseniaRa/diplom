@@ -59,6 +59,29 @@ public class MainPageTests extends TestBase {
         });
     }
 
+
+    @Test
+    @Story("Verification of the main page")
+    @Tags({@Tag("web"), @Tag("ui")})
+    @JiraIssues({@JiraIssue("HOMEWORK-253")})
+    @DisplayName("Successful opening news page")
+    public void newsPageTest() {
+        step("Open the main page", () -> {
+            open(mainPageURL);
+        });
+
+        step("Go to news page", () -> {
+            $(".xf-mp-recipe-news__list").scrollIntoView(true);
+            $(".xf-mp-recipe-news__img-block").click();
+        });
+
+        step("Check that  page is open", () -> {
+            $(".xf-caption__title").shouldBe(visible);
+        });
+    }
+
+
+
     @Test
     @Story("Verification of the main page")
     @Tags({@Tag("web"), @Tag("ui")})
@@ -71,7 +94,7 @@ public class MainPageTests extends TestBase {
 
         step("Check popup", () -> {
             $(".xfnew-header__change-region").click();
-            $("#form_popup-polygons").should(exist); ;
+            $(".xf-popup").should(exist); ;
         });
     }
 
@@ -107,7 +130,7 @@ public class MainPageTests extends TestBase {
             open(mainPageURL);
         });
 
-        step("Go to Request Demo page", () -> {
+        step("Go to Catalog page", () -> {
             $(".xfnew-header__catalog-button").click();
             $$(".fo-catalog-menu__nav a").
                     findBy(text("Молоко, сыр, яйца")).click();
@@ -116,26 +139,6 @@ public class MainPageTests extends TestBase {
         step("Check that  page is open", () -> {
             $(".fo-breadcrumbs__current").
                     shouldHave(text("Молоко, сыр, яйца"));
-        });
-    }
-
-    @Test
-    @Story("Verification of the main page")
-    @Tags({@Tag("web"), @Tag("ui")})
-    @JiraIssues({@JiraIssue("HOMEWORK-253")})
-    @DisplayName("Successful opening news page")
-    public void newsPageTest() {
-        step("Open the main page", () -> {
-            open(mainPageURL);
-        });
-
-        step("Go to news page", () -> {
-            $(".xf-mp-recipe-news__list").scrollIntoView(true);
-            $(".xf-mp-recipe-news__img-block").click();
-        });
-
-        step("Check that  page is open", () -> {
-            $(".xf-caption__title").shouldBe(visible);
         });
     }
 
