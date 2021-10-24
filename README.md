@@ -49,7 +49,6 @@ Mobile
 ![Jenkins - Google Chrome 2021-10-10 19 10 02](https://user-images.githubusercontent.com/52957959/136704127-7219a7fe-6568-4dcf-8056-2106f46b081e.png)
 
 
-
 ## Отчёт в Allure Report
 ![image](https://user-images.githubusercontent.com/52957959/138585572-89ff297f-5462-470a-bd7f-2306b7ec6bf2.png)
 
@@ -72,8 +71,7 @@ Mobile
 
 
 ## Интерграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-253)
-![image](https://user-images.githubusercontent.com/52957959/137966978-8c29bffb-8434-42ec-a78f-5ceafe3b0ffd.png)
-
+![image](https://user-images.githubusercontent.com/52957959/138585718-01b790f6-e20a-45ad-a060-5c6fd67e12a8.png)
 
 
 ## Уведомление в телеграмм
