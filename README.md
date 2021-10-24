@@ -51,7 +51,7 @@ Mobile
 
 
 ## Отчёт в Allure Report
-![Allure Report - Google Chrome 2021-10-17 21 18 20](https://user-images.githubusercontent.com/52957959/137965154-42550771-428c-4d0a-8731-2e919d63d400.png)
+![image](https://user-images.githubusercontent.com/52957959/138585572-89ff297f-5462-470a-bd7f-2306b7ec6bf2.png)
 
 
 ## Хранение тест-кейсов в [Allure TestOps](https://allure.autotests.cloud/project/540/test-cases?treeId=1072)
@@ -64,9 +64,11 @@ Mobile
 
 
 ## Дашборд с тестами и историей запусков
-![image](https://user-images.githubusercontent.com/52957959/138329828-9a5db2e5-1fe1-44e1-acf4-286ce9ceb393.png)
+![image](https://user-images.githubusercontent.com/52957959/138585641-f2d68168-9ffc-44f0-9849-68a5d09ebbb4.png)
 
 
+## Дашборд с результатами запуска
+![Allure TestOps - Google Chrome 2021-10-24 10 56 16](https://user-images.githubusercontent.com/52957959/138585621-afd1dc7f-cf17-447e-b269-e4d13bcd6943.png)
 
 
 ## Интерграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-253)
@@ -75,4 +77,5 @@ Mobile
 
 
 ## Уведомление в телеграмм
-![image](https://user-images.githubusercontent.com/52957959/138336012-8871c117-d6cb-4a1b-818f-2276d01b8819.png)
+![Telegram (6) 2021-10-24 10 55 31](https://user-images.githubusercontent.com/52957959/138585597-654fab35-409a-44d9-b5df-f55656ec08af.png)
+
