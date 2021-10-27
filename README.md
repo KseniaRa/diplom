@@ -1,4 +1,8 @@
 # Final project for QA.Guru with examples of UI, API and Mobile tests 
+* UI: Vprok.ru
+* API: Reqres
+* Mobile: Wikipedia app
+
 
 
 ### Used technologies:
